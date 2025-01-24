@@ -7,7 +7,7 @@ interface ButtonProps {
   const SecondaryButton = ({ title, onClick, className }: ButtonProps) => (
     <button 
        onClick={onClick}
-       className={`bg-secondary text-white py-2 px-4 rounded-lg hover:bg-accent transition duration-300 ${className}`}>
+       className={`ring ring-secondary font-bold text-white py-2 px-6 rounded-lg hover:bg-secondary transition duration-300 ${className}`}>
       {title}
     </button>
   );

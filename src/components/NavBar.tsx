@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-scroll';
 import { HiMenu, HiX } from 'react-icons/hi';
+import MaxWidthWrapper from './MaxWidthWrapper';
 
 const NavBar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-primary text-text p-4 shadow-md z-50">
+    <MaxWidthWrapper>
+      <nav className="fixed top- left-0 right-0 bg-primary text-text p-4 shadow-md z-50">
       <div className="flex justify-between items-center px-2">
-        <h1 className="text-md md:text-lg lg:text-xl font-bold">Aweroro Hadi</h1>
+        <h1 className="text-lg md:text-xl lg:text3xl font-bold">Aweroro Hadi</h1>
 
         {/* Mobile Menu Toggle */}
         <div className="md:hidden">
@@ -53,6 +55,7 @@ const NavBar = () => {
         </div>
       )}
     </nav>
+    </MaxWidthWrapper>
   );
 };
 

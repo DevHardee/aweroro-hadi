@@ -13,9 +13,9 @@ function App() {
         <NavBar/>
         <Hero/>
         <About/>
-        {/* <Projects/>
-        <Contact/>
-        <Footer/>  */}
+        <Projects/> 
+        {/* <Contact/>
+        <Footer/>   */}
       </MaxWidthWrapper>
    </div>
   )

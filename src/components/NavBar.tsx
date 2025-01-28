@@ -29,7 +29,10 @@ const NavBar = () => {
               to={section}
               smooth={true}
               duration={500}
-              className="cursor-pointer hover:text-accent text-md md:text-lg lg:text-xl"
+              className="cursor-pointer pb-2 relative text-md md:text-lg lg:text-xl font-bold 
+              after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] 
+              after:bg-secondary after:bottom-0 after:left-0 after:transition-transform 
+              after:duration-500 after:origin-left hover:after:scale-x-100"
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
             </Link>
@@ -47,7 +50,10 @@ const NavBar = () => {
               smooth={true}
               duration={500}
               onClick={() => setIsOpen(false)}
-              className="cursor-pointer hover:text-accent text-md"
+              className="cursor-pointer relative text-md md:text-lg lg:text-xl font-bold 
+              after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-[2px] 
+              after:bg-secondary after:bottom-0 after:left-0 after:transition-transform 
+              after:duration-300 after:origin-left hover:after:scale-x-100"
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
             </Link>

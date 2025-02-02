@@ -40,7 +40,7 @@ const Contact = () => {
           
         </motion.div>
         <motion.form
-          className="bg-secondary p-6 rounded-lg w-full max-w-lg shadow-lg"
+          className="bg-gray-700 p-6 rounded-lg w-full max-w-lg shadow-lg"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
@@ -54,7 +54,7 @@ const Contact = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full p-2 rounded bg-primary border border-text text-text focus:outline-none focus:ring-2 focus:ring-accent"
+              className="w-full p-2 rounded bg-primary text-text focus:outline-none focus:ring-2 focus:ring-accent"
             />
           </div>
 
@@ -66,7 +66,7 @@ const Contact = () => {
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full p-2 rounded bg-primary border border-text text-text focus:outline-none focus:ring-2 focus:ring-accent"
+              className="w-full p-2 rounded bg-primary text-text focus:outline-none focus:ring-2 focus:ring-accent"
             />
           </div>
 
@@ -77,13 +77,13 @@ const Contact = () => {
               value={formData.message}
               onChange={handleChange}
               required
-              className="w-full p-2 rounded bg-primary border border-text text-text focus:outline-none focus:ring-2 focus:ring-accent h-32"
+              className="w-full p-2 rounded bg-primary text-text focus:outline-none focus:ring-2 focus:ring-accent h-32"
             />
           </div>
 
           <motion.button
             type="submit"
-            className="w-full bg-accent text-primary font-bold py-2 rounded-lg hover:bg-opacity-80 transition"
+            className="w-full bg-secondary text-text font-bold py-2 rounded-lg hover:bg-opacity-80 transition"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >

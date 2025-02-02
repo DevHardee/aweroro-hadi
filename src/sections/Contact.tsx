@@ -4,13 +4,26 @@ import { motion } from "framer-motion";
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
+  const [isSent, setIsSent] = useState(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Message sent! (This is just a placeholder, integrate with an API)");
+
+    const response = await fetch ("https://formspree.io/f/movjwnrp", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(formData,)
+    });
+
+    if (response.ok){
+      setIsSent(true);
+      setFormData({name: "", email: "", message: ""}); //reset form
+      setTimeout(() => setIsSent(false), 5000);
+    }
   };
 
   return (
@@ -46,8 +59,19 @@ const Contact = () => {
           transition={{ duration: 0.8 }}
           onSubmit={handleSubmit}
         >
+           {isSent && (
+            <motion.p
+              className="text-green-400 bg-green-800 p-3 rounded-lg text-center mb-4"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              ✅ Message sent successfully! I'll get back to you soon.
+            </motion.p>
+          )}
+
           <div className="mb-4">
-            <label className="block text-md mb-1">Name</label>
+            <label htmlFor="name" className="block text-md mb-1">Name</label>
             <input
               type="text"
               name="name"
@@ -59,7 +83,7 @@ const Contact = () => {
           </div>
 
           <div className="mb-4">
-            <label className="block text-md mb-1">Email</label>
+            <label htmlFor="email" className="block text-md mb-1">Email</label>
             <input
               type="email"
               name="email"
@@ -71,7 +95,7 @@ const Contact = () => {
           </div>
 
           <div className="mb-4">
-            <label className="block text-md mb-1">Message</label>
+            <label htmlFor="message" className="block text-md mb-1">Message</label>
             <textarea
               name="message"
               value={formData.message}

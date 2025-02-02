@@ -3,6 +3,7 @@ import {motion} from 'framer-motion';
 import { Link } from 'react-scroll';
 import PrimaryButton from '../components/PrimaryButton';
 import SecondaryButton from '../components/SecondaryButton';
+import ResumeDownloadCard from '../components/ResumeDownloadCard';
 
 const Hero = () => {
   return (
@@ -56,6 +57,13 @@ const Hero = () => {
             className='text-xs md:text-lg'
             />
             </Link>
+        </motion.div>
+        <motion.div
+         initial={{ opacity: 0, y: 10 }}
+         animate={{ opacity: 1, y: 0 }}
+         transition={{ delay: 0.6, duration: 0.8 }}
+         >
+           <ResumeDownloadCard/>
         </motion.div>
     </section>
   )

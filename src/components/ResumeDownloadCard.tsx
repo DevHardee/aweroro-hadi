@@ -5,7 +5,7 @@ const ResumeDownloadCard = () => {
   return (
       <a 
       href='/files/Hadi-resume.pdf'
-      className='font-semibold flex items-center gap-3 mt-4 border px-4 rounded py-2'
+      className='font-semibold flex items-center gap-3 mt-4 border border-gray-400 px-4 rounded py-2 hover:border-emerald-300 hover:shadow-lg transition-all'
       >
         Download my resume
         <FaDownload/>

@@ -7,7 +7,7 @@ const About = () => {
   return (
     <section
       id='about'
-      className='bg-primary text-text py-16 px-6 md:px-12 lg:px-20 flex flex-col md:flex-row items-center justify-center md:justify-around'
+      className='text-text py-16 px-6 md:px-12 lg:px-20 flex flex-col md:flex-row items-center justify-center md:justify-around'
     >
       {/* Profile Image */}
       <motion.div

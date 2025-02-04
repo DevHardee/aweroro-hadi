@@ -27,7 +27,7 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="bg-primary text-text py-16 px-4">
+    <section id="contact" className="text-text py-16 px-4">
       {/* Section Title */}
       <motion.h2
         className="text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8"

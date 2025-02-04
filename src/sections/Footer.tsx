@@ -3,7 +3,7 @@ import { FaLinkedin, FaGithub, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary text-text text-sm md:text-lg py-6 text-center">
+    <footer className="text-text text-sm md:text-lg py-6 text-center">
        <p>&copy; {new Date().getFullYear()} Aweroro Hadi. All rights reserved.</p>
       
       {/* Social Links */}

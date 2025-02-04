@@ -10,7 +10,7 @@ const About = () => {
     >
       {/* Profile Image */}
       <motion.div
-        className="w-32 h-40 sm:w-40 sm:h-40 md:w-[125%] md:h-[90vh] lg:w-2/3 lg:h-[600px] rounded-full overflow-hidden border-4 border-accent shadow-lg"
+        className="w-32 h-40 sm:w-40 sm:h-40 md:w-[200%] md:h-[90vh] lg:w-2/3 lg:h-[600px] rounded-full overflow-hidden border-4 border-accent shadow-lg"
         initial={{ opacity: 0, x: -50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}

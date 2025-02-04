@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import profilePic from '../assets/profile.jpg';
 import { FaGraduationCap } from 'react-icons/fa';
 
 const About = () => {
@@ -16,7 +15,7 @@ const About = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <img src={profilePic} alt="Aweroro Hadi" className="w-full h-full object-cover" />
+        <img src={'/src/assets/profile.jpg'} alt="Aweroro Hadi" className="w-full h-full object-cover" />
       </motion.div>
 
       {/* About Text Content */}

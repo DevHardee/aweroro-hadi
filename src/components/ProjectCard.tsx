@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from "framer-motion";
 import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 

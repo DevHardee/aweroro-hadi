@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-scroll';
 import { HiMenu, HiX } from 'react-icons/hi';
 import MaxWidthWrapper from './MaxWidthWrapper';

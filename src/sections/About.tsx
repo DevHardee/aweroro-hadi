@@ -14,7 +14,7 @@ const About = () => {
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8 }}
       >
-        <img src={'/src/assets/profile.jpg'} alt="Aweroro Hadi" loading='lazy' className="w-full h-full object-cover" />
+        <img src={'/assets/profile.jpg'} alt="Aweroro Hadi" loading='lazy' className="w-full h-full object-cover" />
       </motion.div>
 
       {/* About Text Content */}

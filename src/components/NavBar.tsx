@@ -8,7 +8,7 @@ const NavBar = () => {
 
   return (
     <MaxWidthWrapper>
-      <nav className="fixed top- left-0 right-0 bg-primary text-text p-4 shadow-md z-50">
+      <nav className="text-text p-4 shadow-md z-50">
       <div className="flex justify-between items-center px-2">
         <h1 className="text-lg md:text-xl lg:text3xl font-bold">Aweroro Hadi</h1>
 

@@ -8,7 +8,7 @@ import MaxWidthWrapper from "./components/MaxWidthWrapper"
 
 function App() {
   return (
-    <div className="bg-primary">
+    <div>
       <MaxWidthWrapper>
         <NavBar/>
         <Hero/>

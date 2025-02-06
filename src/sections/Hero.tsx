@@ -1,16 +1,21 @@
-import React from 'react';
 import {motion} from 'framer-motion';
 import { Link } from 'react-scroll';
 import PrimaryButton from '../components/PrimaryButton';
 import SecondaryButton from '../components/SecondaryButton';
 import ResumeDownloadCard from '../components/ResumeDownloadCard';
+import { useRef } from 'react';
+import CursorTrail from '../components/CursorTrail';
 
 const Hero = () => {
+    const heroRef = useRef<HTMLDivElement | null>(null);
+
   return (
     <section
     id='home'
+    ref={heroRef}
     className='flex flex-col items-center justify-center text-center bg-primary text-text min-h-screen px-6'
     >
+        <CursorTrail targetRef={heroRef}/>
         <motion.h1
         className='text-3xl md:text-5xl lg:text-7xl font-bold'
         initial= {{opacity: 0, y:-20}}
@@ -19,7 +24,6 @@ const Hero = () => {
         >
             Hey, I'm <span className='text-accent'>Aweroro Hadi</span>
         </motion.h1>
-
         <motion.p
             className="text-lg md:text-2xl lg:text-3xl mt-4 max-w-2xl"
             initial={{ opacity: 0, y: 10 }}

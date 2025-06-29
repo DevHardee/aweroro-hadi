@@ -4,8 +4,7 @@ const ResumeDownloadCard = () => {
   return (
       <a 
       href='/files/Hadi-resume.pdf'
-      target="_blank" 
-      rel="noopener noreferrer"
+      download
       className='font-semibold text-sm md:text-base flex items-center gap-3 mt-4 border border-gray-400 px-4 rounded py-2 hover:border-emerald-300 hover:shadow-lg transition-all'
       >
         Download my resume

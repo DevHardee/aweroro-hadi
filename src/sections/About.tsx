@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { FaGraduationCap, FaReact, FaGit, FaGithub } from 'react-icons/fa';
+import { FaGraduationCap, FaReact, FaGit, FaGithub, FaBriefcase } from 'react-icons/fa';
+import { experiences } from '../components/ExperienceItems';
 
 const About = () => {
   const containerVariants = {
@@ -49,7 +50,7 @@ const About = () => {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-[110%] border border-accent/20 rounded-2xl -rotate-3 -z-10" />
         </motion.div>
 
-        {/* Content Section */}
+        {/* Content Section (Top Part) */}
         <div className="lg:col-span-7 space-y-12">
           <motion.div variants={itemVariants}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-white to-gray-500 bg-clip-text text-transparent">
@@ -108,6 +109,110 @@ const About = () => {
               ))}
             </div>
           </motion.div>
+        </div>
+      </motion.div>
+
+      {/* Dynamic Work Experience Section - Full Width */}
+      <motion.div
+        className="mt-32 space-y-16"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={containerVariants}
+      >
+        <div className="text-center space-y-4">
+          <motion.h3
+            variants={itemVariants}
+            className='font-bold text-4xl md:text-5xl flex items-center justify-center gap-4 bg-gradient-to-r from-white via-secondary to-white bg-clip-text text-transparent'
+          >
+            <FaBriefcase className="text-secondary" />
+            Work Experience
+          </motion.h3>
+          <motion.div
+            variants={itemVariants}
+            className="w-24 h-1 bg-gradient-to-r from-transparent via-secondary to-transparent mx-auto rounded-full"
+          />
+        </div>
+
+        <div className="relative max-w-5xl mx-auto px-4 overflow-hidden py-8">
+          {/* Central Timeline Line */}
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-white/10 to-transparent md:-translate-x-1/2" />
+
+          <div className="space-y-12 md:space-y-24">
+            {experiences.map((exp, index) => (
+              <motion.div
+                key={index}
+                variants={{
+                  hidden: { opacity: 0, x: index % 2 === 0 ? -50 : 50 },
+                  visible: { opacity: 1, x: 0, transition: { duration: 0.8, ease: "easeOut" } }
+                }}
+                className={`relative flex flex-col ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 md:gap-0`}
+              >
+                {/* Desktop Date Badge (Opposite Side) */}
+                <div className={`hidden md:flex w-1/2 ${index % 2 === 0 ? 'justify-end pr-16' : 'justify-start pl-16'}`}>
+                  <motion.span
+                    whileHover={{ scale: 1.1 }}
+                    className="text-sm font-bold tracking-widest text-secondary uppercase bg-secondary/5 border border-secondary/20 px-6 py-2 rounded-full backdrop-blur-md shadow-[0_0_20px_rgba(0,212,255,0.05)]"
+                  >
+                    {exp.period}
+                  </motion.span>
+                </div>
+
+                {/* Timeline Node */}
+                <div className="absolute left-0 md:left-1/2 top-0 md:top-1/2 w-8 h-8 md:w-12 md:h-12 bg-[#0b0c10] border-2 border-secondary/30 rounded-full z-20 flex items-center justify-center -translate-x-1.5 md:-translate-x-1/2 md:-translate-y-1/2 group">
+                  <div className="w-2.5 h-2.5 md:w-4 md:h-4 bg-secondary rounded-full group-hover:scale-150 transition-transform duration-500 shadow-[0_0_15px_rgba(0,212,255,0.5)]" />
+                  {/* Outer Pulsing Ring */}
+                  <div className="absolute inset-0 border-2 border-secondary rounded-full animate-ping opacity-20" />
+                </div>
+
+                {/* Experience Card */}
+                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pl-16' : 'md:pr-16'}`}>
+                  <motion.div
+                    whileHover={{ y: -10 }}
+                    className="group relative p-6 md:p-8 rounded-3xl bg-white/[0.03] border border-white/5 backdrop-blur-xl hover:bg-white/[0.06] hover:border-secondary/30 transition-all duration-500 shadow-2xl"
+                  >
+                    {/* Decorative Gradient Background */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl" />
+
+                    <div className="relative z-10 space-y-4">
+                      <div className="md:hidden flex justify-between items-start mb-4">
+                        <span className="text-[10px] font-bold text-secondary tracking-widest uppercase px-3 py-1 rounded-full bg-secondary/10 border border-secondary/20">
+                          {exp.period}
+                        </span>
+                      </div>
+
+                      <div>
+                        <h4 className="text-2xl font-bold text-white group-hover:text-secondary transition-colors duration-300">
+                          {exp.role}
+                        </h4>
+                        <p className="text-lg font-medium text-gray-400 mt-1">{exp.company}</p>
+                      </div>
+
+                      <ul className="space-y-3">
+                        {exp.description.map((desc, i) => (
+                          <li key={i} className="text-gray-400 text-sm md:text-base leading-relaxed flex items-start gap-4">
+                            <span className="mt-2 w-1.5 h-1.5 rounded-full bg-secondary shrink-0 shadow-[0_0_8px_rgba(0,212,255,1)]" />
+                            {desc}
+                          </li>
+                        ))}
+                      </ul>
+
+                      <div className="flex flex-wrap gap-2 pt-4">
+                        {exp.skills.map((skill, i) => (
+                          <span
+                            key={i}
+                            className="text-[9px] md:text-[10px] uppercase tracking-wider font-extrabold px-3 py-1.5 rounded-lg bg-secondary/5 border border-secondary/10 text-secondary/80 group-hover:border-secondary/40 group-hover:bg-secondary/10 transition-all duration-300"
+                          >
+                            {skill}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </motion.div>
     </section>

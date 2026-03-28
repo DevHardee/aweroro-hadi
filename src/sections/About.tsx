@@ -123,7 +123,7 @@ const About = () => {
         <div className="text-center space-y-4">
           <motion.h3
             variants={itemVariants}
-            className='font-bold text-4xl md:text-5xl flex items-center justify-center gap-4 bg-gradient-to-r from-white via-secondary to-white bg-clip-text text-transparent'
+            className='font-bold text-2xl md:text-5xl flex items-center justify-center gap-4 bg-gradient-to-r from-white via-secondary to-white bg-clip-text text-transparent'
           >
             <FaBriefcase className="text-secondary" />
             Work Experience

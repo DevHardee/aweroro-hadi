@@ -11,7 +11,7 @@ const NavBar = () => {
       <MaxWidthWrapper>
         <nav className="text-text px-4 py-4">
           <div className="flex justify-between items-center">
-            <h1 className="text-lg md:text-xl lg:text-3xl font-bold">Aweroro Hadi</h1>
+            <h1 className="text-base md:text-xl lg:text-2xl font-bold">Aweroro Hadi</h1>
 
             {/* Mobile Menu Toggle */}
             <div className="md:hidden">

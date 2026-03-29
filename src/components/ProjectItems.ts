@@ -41,7 +41,7 @@ export const projects: Project[] = [
     description: "An AI-powered learning platform that helps students prepare for their JAMB and WAEC exams.",
     image: '/assets/prep-ai-image.png',
     techStack: ["React", "Typescript", "Node.js", "Tailwind CSS", "Framer Motion"],
-    liveLink: 'https://enumerator.publicaai.com/',
+    liveLink: 'https://prepai.education/',
     type: 'team',
     contribution: [
       'I was responsible for the frontend development of the entire application, included all the dashboards for all users (Students, Parent, School Admin and Super Admin).',

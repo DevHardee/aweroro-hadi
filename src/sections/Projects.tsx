@@ -76,7 +76,7 @@ const Projects = () => {
               <button
                 key={tab.id}
                 onClick={() => setFilter(tab.id)}
-                className={`relative px-8 py-3 rounded-xl transition-all duration-500 font-bold text-sm tracking-wide overflow-hidden ${filter === tab.id
+                className={`relative text-xs md:text-base px-8 py-3 rounded-xl transition-all duration-500 font-bold text-sm tracking-wide overflow-hidden ${filter === tab.id
                   ? 'text-white'
                   : 'text-gray-500 hover:text-gray-300'
                   }`}

@@ -70,8 +70,8 @@ const Hero = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: "easeOut" }}
                     >
-                        Hi, I'm <br className="hidden md:block" />
-                        <span className='bg-gradient-to-r from-accent via-white to-secondary bg-clip-text text-transparent drop-shadow-sm'>
+                        Hi, I'm
+                        <span className='ml-3 bg-gradient-to-r from-accent via-white to-secondary bg-clip-text text-transparent drop-shadow-sm'>
                             Aweroro Hadi
                         </span>
 
